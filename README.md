@@ -1,29 +1,34 @@
 # charl-e
 
-Charl-E is an ElectronJS app that allows you to run Stable Diffusion locally on your M1 Mac. You can download it here: 
+Charl-E is an ElectronJS app that allows you to run Stable Diffusion locally on your M1 Mac.
+It works by packaging [Stable Diffusion](https://github.com/bfirsh/stable-diffusion) as a python executable, which is then called by the electron app.
+
+You can download it here: 
 
 ## To Run
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+If you don't want to download the DMG and would rather set it up yourself, it's easy! 
+
+From your command line:
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone [https://github.com/electron/electron-quick-start](https://github.com/cbh123/charl-e)
 # Go into the repository
-cd electron-quick-start
+cd charl-e
+```
+
+Next you'll need to download the weights from hugging face. [You can find them here](https://huggingface.co/CompVis/stable-diffusion-v-1-4-original). Download `sd-v1-4.ckpt` and move it to the `/models` folder in this directory.
+
+Finally: 
+```bash
 # Install dependencies
 npm install
 # Run the app
 npm start
 ```
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
-
-## Resources for Learning Electron
-
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+You should be good to go.
 
 ## License
 
