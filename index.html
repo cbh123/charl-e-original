@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>CHARL-E</title>
+  </head>
+  <body>
+    <h3>🖼️ CHARL-E</h3>
+
+    <div style="text-align: center">
+      <!-- Prompt Box -->
+      <form id="prompt-form">
+        <input
+          type="text"
+          id="prompt"
+          name="prompt"
+          placeholder="An iguana eating sushi"
+          required="true"
+          autofocus="on"
+        />
+        <input id="submit" type="submit" value="Generate ⮐" />
+      </form>
+
+      <!-- Options -->
+
+      <!-- Loading / Progress Bar -->
+      <div class="text-align: center">
+        <code id="loading-status" style="height: 10rem"></code>
+        <progress
+          id="progress-bar"
+          value="0"
+          max="100"
+          style="display: none"
+        ></progress>
+      </div>
+
+      <!-- Image Output -->
+      <div id="image-div" style="display: none">
+        <figure>
+          <img id="image" alt="" style="width: 100%" />
+          <figcaption for="image">
+            <a id="img-filepath">View file</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Logs -->
+    <details id="details" style="overflow-x: auto">
+      <summary>Details</summary>
+
+      <form id="options-form">
+        <div>
+          <label for="--outdir">Where should we save your images?</label>
+          <input
+            id="--outdir"
+            type="text"
+            name="--outdir"
+            placeholder="/Users/charlieholtz/Desktop/charl-e/samples"
+            value="/Users/charlieholtz/Desktop/charl-e/samples"
+          />
+        </div>
+
+        <div>
+          <label for="--ddim_steps"
+            >Number of ddim sampling steps. This will make the biggest
+            difference to the quality of your image, but takes time. I recommend
+            50.</label
+          >
+          <input
+            id="--ddim_steps"
+            type="number"
+            name="--ddim_steps"
+            style="width: 5rem"
+            placeholder="--ddim_steps"
+            value="5"
+          />
+        </div>
+
+        <div>
+          <label for="--n_samples"
+            >How many images should I produce for each given prompt?</label
+          >
+          <input
+            id="--n_samples"
+            type="number"
+            name="--n_samples"
+            style="width: 5rem"
+            placeholder="n_samples"
+            value="1"
+          />
+        </div>
+
+        <div>
+          <label for="--plms"
+            >PLMS sampling? These have a little more dreamlike / abstract
+            vibe.</label
+          >
+          <input
+            id="--plms"
+            type="checkbox"
+            name="--plms"
+            placeholder="--plms"
+            checked="true"
+          />
+        </div>
+
+        <div>
+          <label for="n_iter">How often should we sample? (n_iter)</label>
+          <input
+            id="n_iter"
+            type="number"
+            name="--n_iter"
+            style="width: 5rem"
+            placeholder="n_iter"
+            value="1"
+          />
+        </div>
+        <input id="submit" type="submit" value="Save" />
+      </form>
+
+      <hr />
+
+      <h5>Logs</h5>
+      <input
+        id="cancel"
+        type="button"
+        value="Cancel Run"
+        style="display: none; color: white; background-color: red"
+      />
+      <code>
+        <ul id="stdout-list"></ul>
+      </code>
+    </details>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
