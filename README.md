@@ -1,7 +1,7 @@
 # charl-e
 
 Charl-E is an ElectronJS app that allows you to run Stable Diffusion locally on your M1 Mac. No setup scripts or other downloads necessary!
-It works by packaging [Stable Diffusion](https://github.com/bfirsh/stable-diffusion) as a python executable, which is then called by the electron app.
+It works by packaging [Stable Diffusion](https://github.com/bfirsh/stable-diffusion) as a python executable, which is then called by the electron app. The executable lives in `./dist/txt2img`.
 
 You can download it here: https://www.charl-e.com
 
