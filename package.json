@@ -27,7 +27,7 @@
     "electron": "^20.1.0"
   },
   "dependencies": {
-    "@electron-forge/maker-dmg": "^6.0.0-beta.65",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.66",
     "electron-squirrel-startup": "^1.0.0",
     "python-shell": "^3.0.1"
   },
