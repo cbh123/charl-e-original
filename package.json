@@ -29,7 +29,7 @@
   "dependencies": {
     "@electron-forge/maker-dmg": "^6.0.0-beta.65",
     "electron-squirrel-startup": "^1.0.0",
-    "python-shell": "^3.0.1"
+    "python-shell": "^5.0.0"
   },
   "config": {
     "forge": {
